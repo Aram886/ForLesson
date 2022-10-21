@@ -1,0 +1,134 @@
+*, ::after, ::before
+    margin: 0
+    padding: 0
+    box-sizing: 0
+
+html 
+    font-size: 62.5%
+
+body 
+    font-family: Roboto, sans-serif
+    font-weight: 400
+    color: #777777
+    font-size: 1.6rem
+    letter-spacing: .2rem
+    padding: 5rem
+    background-color: white
+
+.conteiner 
+    background-color: #F7F7F7
+    
+.header
+    position: relative
+    height: 95vh
+    background: linear-gradient(90.05deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(1, 1, 1, 0.7) 99.94%), url(../images/header-background.jpg) center / cover no-repeat
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%)
+    &__logo
+        position: absolute
+        left: 5rem
+        top: 5rem
+        width: 5.5rem
+        height: 7rem
+        color: #FFFFFF
+    &__box 
+        position: absolute
+        top: 40%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: 100%
+        text-align: center
+        
+.title-first
+    color: #FFFFFF
+    &__main
+        display: block
+        text-transform: uppercase
+        margin-bottom: 1rem
+        font-weight: 800
+        font-size: 5rem
+        line-height: 60px
+        letter-spacing: 1rem
+        animation: LeftToRight 1.8s ease 1s 
+        animation-timing-function: hidden
+    &__secondary
+        display: block
+        font-weight: 100
+        font-size: 4rem
+        line-height: 4.8rem
+        letter-spacing: .5rem
+        animation: RightToLeft 1.8s ease 1s
+        backface-visibility: hidden
+        margin-bottom: 6.5rem
+
+.btn 
+    &:link, &:visited
+        display: inline-block
+        text-transform: uppercase
+        text-decoration: none
+        color: #777777
+        background: #FFFFFF
+        font-size: 2rem
+        padding: 1.5rem 4rem
+        border-radius: 5.5rem
+        transition: all .3s
+        position: relative
+    &:hover       
+        transform: translateY(-4px)
+        box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.3))
+        &::after
+            opacity: 0
+            transform: scale(1.5, 1.8)
+    &:active
+        transform: translateY(-2px)
+        box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.3))
+    &::after
+        content: ""
+        background: #FFFFFF
+        width: 100%
+        height: 100%
+        border-radius: 5rem
+        display: inline-block
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
+        transition: all .5s
+    &_animated
+        animation: BtnToUP .5s ease-out .7s 
+        animation-fill-mode: backwards
+
+
+@keyframes LeftToRight
+    0%
+        opacity: 0
+        transform: translateX(-10rem)
+
+    80%
+        transform: translateY(1rem)
+
+    100%
+        opacity: 1
+        transform: translateX(0px)
+
+@keyframes RightToLeft
+    0%
+        opacity: 0
+        transform: translateX(10rem)
+
+    80%
+        transform: translateX(-1rem)
+
+    100%
+        opacity: 1
+        transform: translateX(0px) 
+
+    
+@keyframes BtnToUP
+    0%
+        opacity: 0
+        transform: translateY(6rem)
+
+
+    100%
+        opacity: 1
+        transform: translateY(0px) 
